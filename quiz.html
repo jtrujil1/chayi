@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tea Quiz</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
+<link rel="stylesheet" href="navbar.css">
+
+<style type="text/css">
+body{
+	
+	font-family: sans-serif;
+	color:#F2DBA5;
+	text-align: center;
+	font-family: Montserrat, sans-serif;
+	background-color: #808C5F;
+}
+.question{
+	font-weight: 1200;
+	font-size: 35px;
+	padding-left: 2%;
+}
+.answers {
+    	margin-bottom: 20px;
+	padding-left: 5%;
+	font-size: 20px;
+}
+#results {
+    	margin-bottom: 20px;
+    	font-size: 30px;
+}
+#quiz {
+  background-color: #ADAC84;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 2%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  text-align: left;
+}
+#submit{
+	border: none;
+  	color: #808C5F;
+  	Background-color: #F2DBA5;
+ 	font-family: Montserrat, sans-serif;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+ 	border-radius: 12px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+#submit:hover{
+	transform: scale(1.2);
+  	transition: 0.3s;
+}
+
+
+@media only screen and (max-width: 800px) {
+.question{
+  font-size: 20px;
+}
+.answers {
+  font-size: 14px;
+}
+}
+</style>
+
+<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+</head>
+
+<body>
+
+<div class = "navbar">
+<a href="index.html"><img src="logo.jpg" alt="Chayi House Logo" id="logo"></a>
+
+<ul>
+  <li><a href="about.html">About</a></li>
+  <li><a href="experience.html">Experience</a></li>
+  <li><a href="cafe.html">Cafe</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="store.html">Store</a></li>
+</ul>
+</div>
+
+<div id="quiz"></div>
+<button id="submit">Get Results</button>
+<div id="results"></div>
+
+<div class="footer">
+<h5>&copy Chayi House. Somerville, Massachusetts</h5>
+<h5>Photo Credit</h5>
+</div>
+
+
+<script language="javascript">
+var myQuestions = [
+	{
+		question: "What level of antioxidants do you want in your tea?",
+		answers: {
+			a: 'Just a little',
+			b: 'A medium amount',
+			c: 'Super healthy, alot!'
+		},
+		greenAnswer: 'c',
+		oolongAnswer: 'b',
+		blackAnswer: 'a'
+	},
+	{
+		question: "Choose an adjective",
+		answers: {
+			a: 'Fragrant',
+			b: 'Refreshing',
+			c: 'Complex'
+		},
+		greenAnswer: 'b',
+		oolongAnswer: 'a',
+		blackAnswer: 'c'
+	},
+	{
+		question: "How much caffeine do you like?",
+		answers: {
+			a: 'Just a little',
+			b: 'Some',
+			c: 'A ton, keep me awake!'
+		},
+		greenAnswer: 'a',
+		oolongAnswer: 'b',
+		blackAnswer: 'c'
+	},
+	{
+		question: "Pick a word",
+		answers: {
+			a: 'Floral',
+			b: 'Body',
+			c: 'Bright'
+		},
+		greenAnswer: 'c',
+		oolongAnswer: 'a',
+		blackAnswer: 'b'
+	}
+];
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+		// we'll need a place to store the output and the answer choices
+		var output = [];
+		var answers;
+
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+		
+			// first reset the list of answers
+			answers = [];
+
+			// for each available answer to this question...
+			for(letter in questions[i].answers){
+
+				// ...add an html radio button
+				answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</br></label>'
+				);
+			}
+
+			// add this question and its answers to the output
+			output.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+			);
+		}
+
+		// finally combine our output list into one string of html and put it on the page
+		quizContainer.innerHTML = output.join('');
+	}
+
+
+	function showResults(questions, quizContainer, resultsContainer){
+		// gather answer containers from our quiz
+		var answerContainers = quizContainer.querySelectorAll('.answers');
+	
+		// keep track of user's answers
+		var userAnswer = '';
+		var numBlack = 0;
+		var numOolong = 0;
+		var numGreen = 0;
+	
+		// for each question...
+		for(var i=0; i<questions.length; i++){
+
+			// find selected answer
+			userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+		
+			// if answer is correct
+			if(userAnswer===questions[i].blackAnswer){
+				// add to the number of correct answers
+				numBlack++;
+			
+				// color the answers green
+				answerContainers[i].style.color = '#1b371C';
+			}
+			else if(userAnswer===questions[i].oolongAnswer){
+				// add to the number of correct answers
+				numOolong++;
+			
+				// color the answers green
+				answerContainers[i].style.color = '#1b371C';
+			}
+			else if(userAnswer===questions[i].greenAnswer){
+				// add to the number of correct answers
+				numGreen++;
+			
+				// color the answers green
+				answerContainers[i].style.color = '#1b371C';
+			}
+			// if answer is wrong or blank
+			else{
+				// color the answers red
+				answerContainers[i].style.color = '#1b371C';
+			}
+		}
+
+		// show number of correct answers out of total
+		if(numBlack>numGreen && numBlack>numOolong){
+			resultsContainer.innerHTML = "<p>You would like Black tea</p><img src=\"blacktea.jpg\" width=\"400px\" >";
+		}
+		else if(numOolong>numGreen && numOolong>numBlack){
+			resultsContainer.innerHTML = "<p>You would like Oolong tea</p><img src=\"oolongtea.jpg\" width=\"400px\" >";
+		}
+		else if(numGreen>numOolong && numGreen>numBlack){
+			resultsContainer.innerHTML = "<p>You would like Green tea</p><img src=\"greentea.png\" width=\"400px\" >";
+		}
+		else {
+			resultsContainer.innerHTML = "<p>You would like all teas</p><img src=\"alltea.jpg\" width=\"400px\" >";
+		}
+		}
+
+	// show the questions
+	showQuestions(questions, quizContainer);
+
+	// when user clicks submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+}
+
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+
+</script> 
+
+</body>
+</html>
