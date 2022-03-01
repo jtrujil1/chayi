@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {font-family: 'Montserrat', sans-serif;}
+
+/* Slideshow container */
+.slideshow-container {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    /* padding-bottom: 600px; */
+}
+
+/* Hide the images by default */
+.slides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -35px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color*/
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+h1 {
+    visibility: hidden;
+}
+
+h3 {
+    font-size: 36px;
+}
+
+h4 {
+    font-size: 28px;
+}
+
+h5 {
+    font-size: 22px;
+}
+
+#experience-content{
+    text-align: left;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    background-color: #ADAC84;
+    color: #1B371C;
+}
+
+.main-text {
+    background-color: #808C5F;
+    color: #1B371C;
+    padding-top: 10px;
+    padding-left: 15%;
+    padding-right: 15%;
+    position: absolute;
+    bottom: 0px;
+    text-align: left;
+}
+
+.container {
+    padding-top: 200px;
+    position: relative;
+    bottom: 40px;
+}
+
+.side-img {
+    width: 350px;
+    height: 600px;
+    object-fit: cover;
+    max-width: 100%;
+    box-shadow: 2px 2px 8px #F2dba5;
+}
+
+.hid {
+    display: none;
+}
+
+.top-img {
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.exp-container {
+    position: relative;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#classes {
+    display: inline-flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    width: 100%;
+}
+
+.circle-text {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction:column;
+    width: 50%;
+}
+
+#first-circle {
+    padding-left: 20%;
+    padding-right: 4%;
+}
+
+#second-circle {
+    padding-left: 4%;
+    padding-right: 20%;
+}
+
+.characters-vert {
+    font-size: 40px;
+}
+
+.characters-hor {
+    font-size: 30px;
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#jap-text {
+    padding-right: 70px;
+}
+
+#ch-text {
+    padding-left: 70px;
+}
+
+.exp-text {
+    width: 500px;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .container {
+        height: 200px;
+    }
+    .main-text {
+        font-size: 30px;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .exp-container, #jap-text, #ch-text {
+        flex-direction: column;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #classes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #first-circle, #second-circle {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .characters-vert, #img-hid {
+        display: none;
+    }
+
+    .characters-hor, .hid {
+        display: flex;
+        padding-left: 0px;
+    }
+
+}
