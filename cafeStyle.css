@@ -6,7 +6,7 @@
 
 h1 {
     font-size: 38px;
-    color: #808C5F;
+    color: #ADAC84 ;
 }
 
 h2 {
@@ -20,14 +20,14 @@ h2 {
  } 
  
  h2 span { 
-    background:#808C5F; 
+    background:#ADAC84 ; 
     padding:0 10px; 
     text-align: center;
  }
 
 h4 {
     font-size: 20px;
-    color: #808C5F;
+    color: #ADAC84 ;
 }
 
 h5 {
@@ -90,7 +90,7 @@ h5 {
     padding-left: 2%;
     padding-right: 2%;
     width: 60%;
-    background-color: #808C5F;
+    background-color: #ADAC84 ;
     color: white;
 }
 .menu p, h5 {
