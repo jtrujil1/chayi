@@ -78,14 +78,14 @@
 }
 
 h1 {
-    visibility: hidden;
+    display: none;
 }
 
 h3 {
     font-size: 36px;
 }
 
-h4 {
+h2 {
     font-size: 28px;
 }
 
@@ -101,20 +101,15 @@ h5 {
 }
 
 .main-text {
-    background-color: #808C5F;
+    background-color: #ADAC84;
     color: #1B371C;
     padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 15%;
     padding-right: 15%;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0px;
     text-align: left;
-}
-
-.container {
-    padding-top: 200px;
-    position: relative;
-    bottom: 40px;
 }
 
 .side-img {
