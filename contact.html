@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>chayi house</title>
+    <link rel="stylesheet" href="contactStyle.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+  <body>
+    <div id="contact-container">
+      <h3>Contact Us</h3>
+    <div class="location">
+        <h4>cha yi house</h4>
+        <div class="address">
+            <br>
+            <p><i class="fa fa-location-arrow"></i> 23 Sunset Ave, Boston, MA, 02116</p>
+            <p><i class="fa fa-phone"></i> +1-999-987-8398</p>
+            <p><i class="fa fa fa-envelope"></i> info@chayi.com</p>
+        </div>
+        <br>
+    </div>
+      <div class="container">
+        <form name="contactForm" onsubmit="return validateForm()">
+          <label for="fname">First Name *</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="lname">Last Name *</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="email">Email Address *</label>
+          <input type="text" id="email" name="emailAd" placeholder="Your email..">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phoneNum" placeholder="Your phone number..">
+          <!-- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" -->
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" style="height:200px"></textarea>
+          <div class="buttonContainer">
+            <input type="submit" value="Submit" id="submitButton">
+          </div>
+        </form>
+      </div>
+      <h2><span>Hours</span></h2>
+      <div class="hours">
+          <p>
+              <strong>Cafe and Shop Hours:</strong><br><br>
+              Monday through Saturday<br>
+              10AM to 6PM<br><br>
+              Sunday<br>
+              11AM to 4PM<br><br>
+              <strong>Tea house hours by appointment</strong><br><br>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            let fn = document.forms["contactForm"]["fname"].value;
+            let ln = document.forms["contactForm"]["lname"].value;
+            let em = document.forms["contactForm"]["email"].value;
+            let ph = document.forms["contactForm"]["phone"].value;
+            let ms = document.forms["contactForm"]["message"].value;
+
+            if (fn == "" || ln == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            if(em == "") {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(em))) {
+                alert("Email must be valid");
+                return false;
+            }
+
+            if (!(ph != "") && (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(ph)))
+            {
+                alert("Phone number must be valid");
+                return false;
+            }
+
+            if (ms == "") {
+                alert("Message must be filled out");
+                return false;
+            }
+
+            alert("Message sent!");
+            return true;
+
+        }
+    </script>
+  </body>
+</html>
