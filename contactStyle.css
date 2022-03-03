@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: #808c5f;
+    padding-top: 45px;
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 2px solid #808c5f; 
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    text-transform: uppercase;
+} 
+ 
+h2 span { 
+    background:white ; 
+    padding:0 10px; 
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 65px;
+    text-align: center;
+    color: #808c5f;
+}
+
+h4 {
+    color: #F2dba5;
+    font-size: 25px;
+    background-color: #808c5f;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 65px;
+    padding-top: 65px;
+}
+
+.location {
+    display: flex;
+    flex-direction:row;
+    align-items:stretch;
+    justify-content: center;
+    width: 100%;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+.hours {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+#contact-container {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    margin-left: 16%;
+    margin-right: 16%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+}
+
+#contact-container p {
+    font-size: 20px;
+}
+
+input[type=text], select, textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 1px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=tel] {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 2px; 
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* input[type=email] {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+/* } */
+  
+input[type=submit] {
+    text-transform: uppercase;
+    background-color: #808c5f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+  
+input[type=submit]:hover {
+    background-color: #F2dba5;
+}
+  
+.container {
+    /* border-radius: 5px; */
+    /* background-color: #f2f2f2; */
+    /* padding: 20px; */
+}
+
+
+@media only screen and (max-width: 900px) {
+    #contact-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #contact-container p {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+}
