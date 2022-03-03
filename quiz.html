@@ -3,10 +3,18 @@
 <head>
 <title>Tea Quiz</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
-<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="navbar.css"> 
 
 <style type="text/css">
+h1{
+  display: none;
+}
+h2{
+  display: none;
+}
 body{
 	
 	font-family: sans-serif;
@@ -75,17 +83,21 @@ body{
 
 <body>
 
-<div class = "navbar">
-<a href="index.html"><img src="logo.jpg" alt="Chayi House Logo" id="logo"></a>
-
-<ul>
-  <li><a href="about.html">About</a></li>
-  <li><a href="experience.html">Experience</a></li>
-  <li><a href="cafe.html">Cafe</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="store.html">Store</a></li>
-</ul>
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active"><img src="photos/logo.jpg" alt="Chayi House Logo" height=120px id="logo"></a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+  <a href="store.html">Store</a>
+  <a href="experience.html">Experience</a>
+  <a href="cafe.html">Cafe</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
+
+<h1>Quiz</h1>
+<h2>What tea is right for you?</h2>
+
 
 <div id="quiz"></div>
 <button id="submit">Get Results</button>
@@ -230,16 +242,16 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 		// show number of correct answers out of total
 		if(numBlack>numGreen && numBlack>numOolong){
-			resultsContainer.innerHTML = "<p>You would like Black tea</p><img src=\"blacktea.jpg\" width=\"400px\" >";
+			resultsContainer.innerHTML = "<p>You would like Black tea</p><img src=\"photos/blacktea.jpg\" width=\"400px\" >";
 		}
 		else if(numOolong>numGreen && numOolong>numBlack){
-			resultsContainer.innerHTML = "<p>You would like Oolong tea</p><img src=\"oolongtea.jpg\" width=\"400px\" >";
+			resultsContainer.innerHTML = "<p>You would like Oolong tea</p><img src=\"photos/oolongtea.jpg\" width=\"400px\" >";
 		}
 		else if(numGreen>numOolong && numGreen>numBlack){
-			resultsContainer.innerHTML = "<p>You would like Green tea</p><img src=\"greentea.png\" width=\"400px\" >";
+			resultsContainer.innerHTML = "<p>You would like Green tea</p><img src=\"photos/greentea.jpg\" width=\"400px\" >";
 		}
 		else {
-			resultsContainer.innerHTML = "<p>You would like all teas</p><img src=\"alltea.jpg\" width=\"400px\" >";
+			resultsContainer.innerHTML = "<p>You would like all teas</p><img src=\"photos/alltea.jpg\" width=\"400px\" >";
 		}
 		}
 
@@ -259,7 +271,14 @@ var submitButton = document.getElementById('submit');
 
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
-
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 </script> 
 
 </body>
