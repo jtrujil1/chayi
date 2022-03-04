@@ -51,6 +51,10 @@ div.footer {
   padding: 6px 6px;
 }
 
+div.footer h5 {
+  font-size: 16px;
+}
+
 @media screen and (max-width: 700px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
