@@ -4,8 +4,32 @@
     <link rel="stylesheet" href="contactStyle.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        .att a{
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            z-index: 0;
+            color: #F2dba5;
+            text-decoration: none;
+        }
+    </style>
   </head>
   <body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active"><img src="photos/logo.jpg" alt="Chayi House Logo" height=120px id="logo"></a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="store.html">Store</a>
+        <a href="experience.html">Experience</a>
+        <a href="cafe.html">Cafe</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
     <div id="contact-container">
         <h1>Contact</h1>
       <h3>Contact Us</h3>
@@ -85,6 +109,22 @@
 
             alert("Message sent!");
             return true;
+        }
+    </script>
+    <div class="footer">
+        <h5>&copy Chayi House. Somerville, Massachusetts</h5>
+        <div class="att">
+            <a target="_blank" href="https://www.vecteezy.com/free-photos">Free Stock photos by Vecteezy</a>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+            x.className += " responsive";
+            } else {
+            x.className = "topnav";
+            }
         }
     </script>
   </body>
