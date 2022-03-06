@@ -3,13 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
-    <link href="https://fonts.googleapis.com/css2?family=Andada+Pro&family=Karla:ital,wght@0,200;0,300;0,500;1,200;1,300&display=swap" rel="stylesheet">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
+    <link rel="stylesheet" href="navbar.css"> 
+    <style>
+    
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+    .att a{
+           font-size: 10px;
+           display: flex;
+           justify-content: center;
+           z-index: 0;
+           color: #F2dba5;
+           text-decoration: none;
+    }
+    .outer{
+        min-height: 100vh;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .about-section{
+        background: url(images/tea-2519551.jpg) no-repeat left;
+        background-size: 55%;
+        background-color: #ADAC84;
+        overflow: hidden;
+        padding: 100px 0;
+    }
+
+    .inner-container{
+        width: 55%;
+        float: right;
+        background-color: #fdfdfd;
+        padding: 150px;
+    }
+
+    .inner-container h1{
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .text{
+        font-size: 16px;
+        color: #545454;
+        line-height: 30px;
+        text-align: justify;
+        margin-bottom: 40px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .skills{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    @media screen and (max-width:1200px){
+        .inner-container{
+            padding: 80px;
+        }
+    }
+
+    @media screen and (max-width:1000px){
+        .about-section{
+            background-size: 100%;
+            padding: 100px 40px;
+        }
+        .inner-container{
+        }
+    }
+
+    @media screen and (max-width:600px){
+        .about-section{
+            padding: 0;
+            background-image: url("");
+        }
+        .inner-container{
+            padding: 60px;
+            width: auto;
+        }
+    }
+    </style>
 </head>
 <body>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active"><img src="photos/logo.jpg" alt="Chayi House Logo" height=120px id="logo"></a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html" >About</a>
+      <a href="store.html">Store</a>
+      <a href="experience.html">Experience</a>
+      <a href="cafe.html">Cafe</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class = "outer">
     <div class="about-section">
         <div class="inner-container">
             <h1>About Us</h1>
@@ -35,5 +133,26 @@
             <p>
         </div>
     </div>
+    </div>
+    
+    <div class="footer">
+    <h5>&copy Chayi House. Somerville, Massachusetts</h5>
+    <div class="att">
+       <a target="_blank" href="https://www.vecteezy.com/free-photos">Free Stock photos by
+          Vecteezy</a>
+     </div>
+    </div>
+    
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    
 </body>
 </html>
