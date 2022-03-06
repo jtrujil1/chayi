@@ -1,11 +1,14 @@
-*{
-    font-family: 'Andada Pro', serif;
-    font-family: 'Karla', sans-serif;
-    background-color: #F2DBA5;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 body {
     margin: 0;
+}
+
+.container {
+    background-color: #F2DBA5;
 }
 
 .image-grid {
@@ -19,6 +22,8 @@ body {
  grid-template-columns: repeat(var(--num-cols), 1fr);
  grid-auto-rows: var(--row-height);
  gap: var(--gap);
+ background-color: #F2DBA5;
+
 }
 
 .text-grid {
@@ -32,6 +37,9 @@ body {
  grid-template-columns: repeat(var(--num-cols), 1fr);
  grid-auto-rows: var(--row-height);
  gap: var(--gap);
+ background-color: #F2DBA5;
+ font-family: 'Montserrat', sans-serif;
+
 }
 
 .text-grid > span {
@@ -42,10 +50,13 @@ body {
 .text-grid > a {
     text-align: center;
     font-size: 17px;
-    text-decoration-color: #006400;
+    color: #1B371C;
     text-decoration: none;
 }
 
+.text-grid > a:hover {
+    color: #808C5F;
+}
 .image-grid > img {
     width: 100%;
     height: 100%;

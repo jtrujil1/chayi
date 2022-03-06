@@ -4,42 +4,67 @@
     <title>Experience</title>
     <link rel="stylesheet" href="experienceStyle.css"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
+    <link rel="stylesheet" href="navbar.css"> 
+    <style type="text/css">
+        .block {width: 100px; height: 100px; border: 1px solid #000}
+        #slides img {width:100%; object-fit: cover; height: 600px;}
+        .att a{
+         font-size: 10px;
+         display: flex;
+         justify-content: center;
+         z-index: 0;
+         color: #F2dba5;
+         text-decoration: none;
+        }
+    </style>
+    <script src= "https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+    </script>
+    <script>
+        images = ["photos/tea_house_window.jpg","photos/teapot_water.jpg","photos/culture_room.jpg"]
+        currIndex = 0;
+        function fadeinImg(){
+            currIndex++;
+            currIndex = currIndex % images.length;
+            $("#slides img").attr("src", images[currIndex])
+            $("#slides img").fadeIn(2000, fadeoutImg);
+        }
+    
+        function fadeoutImg(){
+            $("#slides img").fadeOut(2000, fadeinImg);
+        }
+        $(document).ready(function(){
+            fadeinImg();    
+        })
+    </script>
   </head>
   <body>
+      <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active"><img src="photos/logo.jpg" alt="Chayi House Logo" height=120px id="logo"></a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="store.html">Store</a>
+        <a href="experience.html">Experience</a>
+        <a href="cafe.html">Cafe</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
     <header>
     </header>
     <h1>Experience</h1>
     <div id="experience-content">
         <div class="main-text" class="reveal">
             <h3>Your Tea Experience</h3>
-            <h5>At chayi house we take pride in offering our guests the most authentic, inviting tea time experience. We offer a variety of services for the tea connoisseurs and for those just starting on their tea journey.</h5>
+            <h4>At chayi house we take pride in offering our guests the most authentic, inviting tea time experience. We offer a variety of services for the tea connoisseurs and for those just starting on their tea journey.</h4>
         </div>
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            <!-- Slideshow images -->
-            <div class="slides fade">
-                <img src="photos/tea_house_window.jpg" style="width:100%; object-fit: cover; height: 600px;">
-            </div>
-        
-            <div class="slides fade">
-                <img src="photos/culture_room.jpg" style="width:100%; object-fit: cover; height: 600px;">
-            </div>
-        
-            <div class="slides fade">
-                <img src="photos/teapot_water.jpg" style="width:100%; object-fit: cover; height: 600px;">
-            </div>
-        
-            <!-- Next and prev buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div id='slides'>
+            <img src ="tea_house_window.jpg">
         </div>
-        <br>
-        <!-- Dots -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+        <br/>
         <!-- <br><br><br> <br> <br> <br>  -->
         <div class="exp-container">
             <img src="photos/tea_pouring.jpg" class="side-img"></img>
@@ -57,12 +82,12 @@
         <div class="exp-container" id="classes">
             <div class="circle-text" id="first-circle">
                 <img src="photos/tea_container.jpg" class="top-img"></img>
-                <h5>Private Tea Tasting</h5>
+                <h4>Private Tea Tasting</h4>
                 <p>Drink a variety of specially selected, delicious and rare teas while learning about tea and tasting tips from our Tea Masters.</p>
             </div>
             <div class="circle-text" id="second-circle">
                 <img src="photos/tea_pour.jpg" class="top-img"></img>
-                <h5>Gong Fu Tea Ceremony</h5>
+                <h4>Gong Fu Tea Ceremony</h4>
                 <p>Learn how to make a brew that tastes good and is satisfying to the soul by attending the ancient, but still thriving tradition, of Gong Fu tea ceremonies. </p>
             </div>
         </div>
@@ -82,36 +107,25 @@
 
     <footer>
     </footer>
-
+    
+    <div class="footer">
+    <h5>&copy Chayi House. Somerville, Massachusetts</h5>
+    <div class="att">
+       <a target="_blank" href="https://www.vecteezy.com/free-photos">Free Stock photos by
+          Vecteezy</a>
+     </div>
+    </div>
+    
+    
     <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("slides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
     </script>
 
   </body>
