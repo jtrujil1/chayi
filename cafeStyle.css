@@ -6,7 +6,7 @@
 
 h1 {
     font-size: 38px;
-    color: #ADAC84 ;
+    color: #808C5F ;
 }
 
 h2 {
@@ -20,29 +20,29 @@ h2 {
  } 
  
  h2 span { 
-    background:#ADAC84 ; 
+    background:white ; 
     padding:0 10px; 
     text-align: center;
  }
 
 h4 {
     font-size: 20px;
-    color: #ADAC84 ;
+    color: #808C5F ;
 }
 
 h3 {
     font-size: 20px;
-    color: white;
+    color: #ADAC84;
     padding: 0px;
 }
 
 .menu-text {
     font-size: 35px;
-    border-bottom: 2px solid white;
-    border-top: 2px solid white;
+    border-bottom: 2px solid #ADAC84;
+    border-top: 2px solid #ADAC84;
     width: 100%;
     text-align: center;
-    color: white;
+    color: #ADAC84;
 }
 
 .main-container {
@@ -68,6 +68,7 @@ h3 {
 
 .img {
     height: 200px;
+    object-fit: cover;
 }
 
 .column {
@@ -77,7 +78,7 @@ h3 {
 }
 
 .block {
-    background-color: #F2dba5;
+    background-color: #ADAC84;
     height: 200px;
 }
 
@@ -86,21 +87,30 @@ h3 {
     color: #F2dba5;
     padding-left: 25px;
     padding-right: 20px;
+    background-color: #F2dba5;
 }
 
 .menu {
     padding-left: 2%;
     padding-right: 2%;
     width: 60%;
-    background-color: #ADAC84 ;
-    color: white;
+    background-color: white;
+    color: #ADAC84;
 }
 .menu p, h3 {
-    color: white;
+    color: #ADAC84;
     padding-top: 0px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1170px) {
+    .main-text {
+        height: fit-content;
+    }
+
+    .img {
+        width: auto;
+    }
+
     #col2 {
         display:none;
     }
@@ -119,3 +129,15 @@ h3 {
         width: 100%;
     }
 }
+
+@media only screen and (max-width: 1000px) {
+    .img {
+        height: 250px;
+    }
+
+    .block {
+        height: 250px;
+    }
+}
+
+
