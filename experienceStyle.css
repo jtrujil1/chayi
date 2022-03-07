@@ -32,7 +32,6 @@ h4 {
     padding-bottom: 10px;
     padding-left: 15%;
     padding-right: 15%;
-    /* position: absolute; */
     bottom: 0px;
     text-align: left;
 }
@@ -115,6 +114,23 @@ h4 {
     font-size: 20px;
 }
 
+@media only screen and (max-width: 1050px) {
+    .exp-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #first-circle, #second-circle {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    #classes {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
 @media only screen and (max-width: 900px) {
     .container {
         height: 200px;
@@ -152,9 +168,17 @@ h4 {
 
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
     .exp-container {
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    .circle-text {
+        width: 80%;
+    }
+
+    .exp-text {
+        width: 96%;
     }
 }
