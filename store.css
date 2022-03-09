@@ -3,12 +3,38 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
+
 body {
     margin: 0;
+    background-color: #ADAC84;
+}
+
+.text-cont {
+    float: inline-start;
+    background-color: #ADAC84;
+}
+
+h3 {
+    font-size: 25px;
+    color: #1B371C;
+    padding-top: 15px;
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 2px solid #1B371C; 
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+} 
+ 
+h3 span { 
+    background:#ADAC84 ; 
+    padding:0 10px; 
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .container {
-    background-color: #F2DBA5;
+    background-color: #ADAC84;
 }
 
 .image-grid {
@@ -22,7 +48,7 @@ body {
  grid-template-columns: repeat(var(--num-cols), 1fr);
  grid-auto-rows: var(--row-height);
  gap: var(--gap);
- background-color: #F2DBA5;
+ background-color: #ADAC84;
 
 }
 
@@ -37,7 +63,7 @@ body {
  grid-template-columns: repeat(var(--num-cols), 1fr);
  grid-auto-rows: var(--row-height);
  gap: var(--gap);
- background-color: #F2DBA5;
+ background-color: #ADAC84;
  font-family: 'Montserrat', sans-serif;
 
 }
